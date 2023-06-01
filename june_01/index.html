@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment Variables</title>
+</head>
+<body>
+    <script>
+        const environments=["dev","test","stage","prod"];
+        let environment =prompt(`enter an environment you choose - ${environments.map(env=>env)}`);
+        let amount= prompt("enter sent Amount");
+        // console.log(environment,amount)
+        let sentAmount;
+        switch (environment) {
+                case "dev":
+                sentAmount = +amount+10
+                break;
+                case "test":
+                sentAmount = +amount+20
+                break;
+                case "stage":
+                sentAmount = +amount+30
+                break;
+                case "prod":
+                sentAmount = +amount+5
+                break;
+        
+            default:
+                sentAmount = +amount
+                break;
+        }
+
+            console.log(sentAmount)
+    </script>
+</body>
+</html>

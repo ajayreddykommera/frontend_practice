@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="intro.css">
+    <title>Ajay Kumar Kommera</title>
+    
+</head>
+<body>
+    <h1>Ajay Kumar Kommera</h1>
+    <p>My name is Ajay. i graduated from UNT. Currently I am Looking for a job with Full Stack Java Developer.</p>
+    <hr>
+<h1 >Profile Details</h1>
+
+<div id="myImg"></div>
+<img id="photo" src="image.jpg" width="250" height="250"></img>
+<h3 id="name"></h3>
+<h3 id="DOB"></h3>
+<h3 id="education"></h3>
+<h3 id="age"></h3>
+<h3 id="gender"></h3>
+<h3 id="mail"></h3>
+<h3 id="address"></h3>
+<h3 id="phone"></h3>
+<h3 id="hobbies"></h3>
+<h3 id="achievements"></h3>
+
+
+
+
+    <script>
+        const myProfile = {
+                name: "Ajay Kumar Kommera",
+                DOB: "12/13/1996",
+                education:["Batchlors","Masters"],
+                age: 25,
+                gender: "Male",
+                mail: "ajaykrk.tech@gmail.com",
+                address: "425 Bernard St",
+                phone: "+1 7639107427",
+                hobbies: ["Cooking","Playing Cricket"],
+                achievements: "Completed masters...  LOL!!!!",
+                
+            };
+
+        document.getElementById("name").innerHTML = "Name : " + myProfile.name;
+        document.getElementById("DOB").innerHTML = "DOB : " + myProfile.DOB;
+        document.getElementById("education").innerHTML = "Education : " + myProfile.education[myProfile.education.length-1];
+        document.getElementById("age").innerHTML = "Age : " + myProfile.age;
+        document.getElementById("gender").innerHTML = "Gender : " + myProfile.gender;
+        document.getElementById("mail").innerHTML = "Mail : " + myProfile.mail;
+        document.getElementById("address").innerHTML = "Address : " + myProfile.address;
+        document.getElementById("phone").innerHTML = "Phone : " + myProfile.phone; 
+        document.getElementById("hobbies").innerHTML = "Hobbies : " + myProfile.hobbies[myProfile.hobbies.length-1];
+        document.getElementById("achievements").innerHTML = "Achievements : " + myProfile.achievements; 
+    
+    </script>
+</body>
+</html>
