@@ -15,23 +15,23 @@
         let sentAmount;
         switch (environment) {
                 case "dev":
-                sentAmount = +amount+10
+                sentAmount = +amount+(amount*10/100);
                 break;
                 case "test":
-                sentAmount = +amount+20
+                sentAmount = +amount+ (amount*20/100)
                 break;
                 case "stage":
-                sentAmount = +amount+30
+                sentAmount = +amount+ (amount*30/100)
                 break;
                 case "prod":
-                sentAmount = +amount+5
+                sentAmount = +amount+ (amount*5/100)
                 break;
         
             default:
                 sentAmount = +amount
                 break;
         }
-
+            alert(`The Sent Amount for ${environment} is ${sentAmount}`);
             console.log(sentAmount)
     </script>
 </body>
