@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>June_02</title>
+</head>
+<body>
+    <script>
+        let hobbies = [];
+
+            function getAllHobbies() {
+                return hobbies;
+            }
+
+            function addHobby(newHobby) {
+                hobbies.push(newHobby);
+            }
+
+            function deleteHobby(hobbyToDelete) {
+                const index = hobbies.indexOf(hobbyToDelete);
+                if (index > -1) {
+                    hobbies.splice(index, 1);
+                }
+            }
+
+            addHobby("Reading");
+            addHobby("Cooking");
+            addHobby("Gardening");
+            addHobby("Painting");
+
+            console.log(getAllHobbies());
+
+            console.log(getAllHobbies());
+
+            deleteHobby("Cooking");
+
+            console.log(getAllHobbies());
+            hobbies.map(hobby=> console.log(hobby));
+
+    </script>
+    
+</body>
+</html>
