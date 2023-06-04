@@ -10,33 +10,32 @@
     <script>
         let hobbies = [];
 
-            function getAllHobbies() {
+            const getAllHobbies=()=> {
                 return hobbies;
             }
 
-            function addHobby(newHobby) {
+            function addAHobby(newHobby) {
                 hobbies.push(newHobby);
             }
 
-            function deleteHobby(hobbyToDelete) {
-                const index = hobbies.indexOf(hobbyToDelete);
+            function deleteHobby(deleteHobby,message="Hobby deleted") {
+                const index = hobbies.indexOf(deleteHobby);
                 if (index > -1) {
                     hobbies.splice(index, 1);
                 }
+                console.log(message)
             }
 
-            addHobby("Reading");
-            addHobby("Cooking");
-            addHobby("Gardening");
-            addHobby("Painting");
+            addAHobby("Reading Books");
+            addAHobby("Cooking");
+            addAHobby("Playing Cricket");
+            addAHobby("Watching Series");
+
+            deleteHobby("Reading Books");
 
             console.log(getAllHobbies());
-
-            console.log(getAllHobbies());
-
-            deleteHobby("Cooking");
-
-            console.log(getAllHobbies());
+            
+            //using Map function
             hobbies.map(hobby=> console.log(hobby));
 
     </script>
