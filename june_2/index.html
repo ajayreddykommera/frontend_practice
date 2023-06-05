@@ -8,17 +8,17 @@
 </head>
 <body>
     <script>
-        let hobbies = [];
+        let hobbies = ["Code","Swimming"];
 
             const getAllHobbies=()=> {
                 return hobbies;
             }
 
-            function addAHobby(newHobby) {
+            const addAHobby=(newHobby) =>{
                 hobbies.push(newHobby);
             }
 
-            function deleteHobby(deleteHobby,message="Hobby deleted") {
+            const deleteAHobby=(deleteHobby,message="Hobby deleted")=> {
                 const index = hobbies.indexOf(deleteHobby);
                 if (index > -1) {
                     hobbies.splice(index, 1);
@@ -26,12 +26,14 @@
                 console.log(message)
             }
 
-            addAHobby("Reading Books");
+            //Adding A Hobby To Array
             addAHobby("Cooking");
             addAHobby("Playing Cricket");
             addAHobby("Watching Series");
 
-            deleteHobby("Reading Books");
+
+            //Deleting a hobby a Array
+            deleteAHobby("Swimming");
 
             console.log(getAllHobbies());
             
