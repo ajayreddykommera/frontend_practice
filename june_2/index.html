@@ -10,32 +10,38 @@
     <script>
         let hobbies = ["Code","Swimming"];
 
-            const getAllHobbies=()=> {
+            const returnHobbies=(message="returning All the elements from array - ")=> {
+                console.log(message);
                 return hobbies;
             }
 
-            const addAHobby=(newHobby) =>{
-                hobbies.push(newHobby);
+            const addHobbyToArray=(hobby,message="Hobby added to Array -") =>{
+    
+                hobbies.push(hobby);
+                console.log(message, hobby);
             }
 
-            const deleteAHobby=(deleteHobby,message="Hobby deleted")=> {
-                const index = hobbies.indexOf(deleteHobby);
+            const deleteAHobby=(hobby,message="Hobby deleted -")=> {
+                
+                const index = hobbies.findIndex(hob=>hob=== hobby);
+                console.log("Index-- ",index)
                 if (index > -1) {
                     hobbies.splice(index, 1);
                 }
-                console.log(message)
+                console.log(message, hobby)
+ 
             }
 
             //Adding A Hobby To Array
-            addAHobby("Cooking");
-            addAHobby("Playing Cricket");
-            addAHobby("Watching Series");
+            addHobbyToArray("Cooking");
+            addHobbyToArray("Playing Cricket");
+            addHobbyToArray("Watching Series");
 
 
             //Deleting a hobby a Array
             deleteAHobby("Swimming");
 
-            console.log(getAllHobbies());
+            console.log(returnHobbies());
             
             //using Map function
             hobbies.map(hobby=> console.log(hobby));
