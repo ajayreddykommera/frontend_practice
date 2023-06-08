@@ -32,13 +32,13 @@
     <div>
         <label>Hobbies</label>
         <input type="checkbox" id="playing_cricket" value="playing cricket" />
-        <label >Playing Cricket</label>
+        <label for="playing_cricket">Playing Cricket</label>
     
         <input type="checkbox" id="watching_series" value="watching series" />
-        <label >Watching Series</label>
+        <label for="watching_series">Watching Series</label>
     
         <input type="checkbox" id="cooking" value="cooking" />
-        <label >Cooking</label>
+        <label for="cooking">Cooking</label>
     </div>
     <br/>
     <div>
@@ -58,9 +58,7 @@
             const dob = document.getElementById('dob').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
-            const hobby1 = document.getElementById('playing_cricket').checked;
-            const hobby2 = document.getElementById('watching_series').checked;
-            const hobby3 = document.getElementById('cooking').checked;
+
             
 
             const profile = `<div>
