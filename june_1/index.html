@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Environment Variables</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        const environments=["dev","test","stage","prod"];
-        let environment =prompt(`enter an environment you choose - ${environments.map(env=>env)}`);
-        let amount= prompt("enter sent Amount");
-        // console.log(environment,amount);
-        let sentAmount;
-        switch (environment) {
-                case "dev":
-                sentAmount = +amount+(amount*10/100);
-                break;
-                case "test":
-                sentAmount = +amount+ (amount*20/100)
-                break;
-                case "stage":
-                sentAmount = +amount+ (amount*30/100)
-                break;
-                case "prod":
-                sentAmount = +amount+ (amount*5/100)
-                break;
-        
-            default:
-                sentAmount = +amount
-                break;
-        }
-            alert(`The Sent Amount for ${environment} is ${sentAmount}`);
-            console.log(sentAmount)
+      const environments = ["dev", "test", "stage", "prod"];
+      let environment = prompt(
+        `enter an environment you choose - ${environments.map((env) => env)}`
+      );
+      let amount = prompt("enter sent Amount");
+      // console.log(environment,amount);
+      let sentAmount;
+      switch (environment) {
+        case "dev":
+          sentAmount = +amount + (amount * 10) / 100;
+          break;
+        case "test":
+          sentAmount = +amount + (amount * 20) / 100;
+          break;
+        case "stage":
+          sentAmount = +amount + (amount * 30) / 100;
+          break;
+        case "prod":
+          sentAmount = +amount + (amount * 5) / 100;
+          break;
+
+        default:
+          sentAmount = +amount;
+          break;
+      }
+      alert(`The Sent Amount for ${environment} is ${sentAmount}`);
+      console.log(sentAmount);
     </script>
-</body>
+  </body>
 </html>

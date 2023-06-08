@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>June 05</title>
-</head>
-<body>
-   
-    <div> 
-        <label>First Name </label><br>
-        <input type="text" id="firstName">
+  </head>
+  <body>
+    <div>
+      <label>First Name </label><br />
+      <input type="text" id="firstName" />
     </div>
     <div>
-        <label>Last Name </label><br>
-        <input type="text" id="lastName">
+      <label>Last Name </label><br />
+      <input type="text" id="lastName" />
     </div>
-   
-    <div>
-        <label>DOB </label><br>
-        <input type="date" id="dob">
-    </div>
-    <div>
-        <label>Email </label><br>
-        <input type="email" id="email">
-    </div>
-    <div>
-        <label>Phone </label><br>
-        <input type="text" id="phone">
-    </div>
-    <div>
-        <button onclick="submitProfile()">Submit</button>
-    </div>
-        
-   <p id="profile">
 
-   </p>
+    <div>
+      <label>DOB </label><br />
+      <input type="date" id="dob" />
+    </div>
+    <div>
+      <label>Email </label><br />
+      <input type="email" id="email" />
+    </div>
+    <div>
+      <label>Phone </label><br />
+      <input type="text" id="phone" />
+    </div>
+    <div>
+      <button onclick="submitProfile()">Submit</button>
+    </div>
 
+    <p id="profile"></p>
 
     <script>
+      function submitProfile() {
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const dob = document.getElementById("dob").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
 
-        function submitProfile() {
-                const firstName = document.getElementById('firstName').value;
-                const lastName = document.getElementById('lastName').value;
-                const dob = document.getElementById('dob').value;
-                const email = document.getElementById('email').value;
-                const phone = document.getElementById('phone').value;
-
-            
-                
-                const profile=`<div>
+        const profile = `<div>
                     <h3> First Name    : ${firstName}  </h3> 
                     <h3> Last Name     : ${lastName}  </h3> 
                     <h3> Date of Birth : ${dob}  </h3> 
                     <h3> Email         : ${email}  </h3> 
                     <h3> Phone         : ${phone}  </h3> 
             
-                    </div>`
+                    </div>`;
 
-                document.getElementById('profile').innerHTML = profile;
-            }
+        document.getElementById("profile").innerHTML = profile;
+      }
     </script>
-</body>
+  </body>
 </html>

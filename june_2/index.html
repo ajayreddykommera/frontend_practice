@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>June_02</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let hobbies = ["Code","Swimming"];
+      let hobbies = ["Code", "Swimming"];
 
-            const returnHobbies=(message="returning All the elements from array - ")=> {
-                console.log(message);
-                return hobbies;
-            }
+      const returnHobbies = (
+        message = "returning All the elements from array - "
+      ) => {
+        console.log(message);
+        return hobbies;
+      };
 
-            const addHobbyToArray=(hobby,message="Hobby added to Array -") =>{
-    
-                hobbies.push(hobby);
-                console.log(message, hobby);
-            }
+      const addHobbyToArray = (hobby, message = "Hobby added to Array -") => {
+        hobbies.push(hobby);
+        console.log(message, hobby);
+      };
 
-            const deleteAHobby=(hobby,message="Hobby deleted -")=> {
-                
-                const index = hobbies.findIndex(hob=>hob=== hobby);
-                console.log("Index-- ",index)
-                if (index > -1) {
-                    hobbies.splice(index, 1);
-                }
-                console.log(message, hobby)
- 
-            }
+      const deleteAHobby = (hobby, message = "Hobby deleted -") => {
+        const index = hobbies.findIndex((hob) => hob === hobby);
+        console.log("Index-- ", index);
+        if (index > -1) {
+          hobbies.splice(index, 1);
+        }
+        console.log(message, hobby);
+      };
 
-            //Adding A Hobby To Array
-            addHobbyToArray("Cooking");
-            addHobbyToArray("Playing Cricket");
-            addHobbyToArray("Watching Series");
+      //Adding A Hobby To Array
+      addHobbyToArray("Cooking");
+      addHobbyToArray("Playing Cricket");
+      addHobbyToArray("Watching Series");
 
+      //Deleting a hobby a Array
+      deleteAHobby("Swimming");
 
-            //Deleting a hobby a Array
-            deleteAHobby("Swimming");
+      console.log(returnHobbies());
 
-            console.log(returnHobbies());
-            
-            //using Map function
-            hobbies.map(hobby=> console.log(hobby));
-
+      //using Map function
+      hobbies.map((hobby) => console.log(hobby));
     </script>
-    
-</body>
+  </body>
 </html>
