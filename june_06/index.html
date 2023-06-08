@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>June 06</title>
+</head>
+
+<body>
+
+    <div>
+        <label>First Name </label><br>
+        <input type="text" id="firstName">
+    </div>
+    <div>
+        <label>Last Name </label><br>
+        <input type="text" id="lastName">
+    </div>
+
+    <div>
+        <label>DOB </label><br>
+        <input type="date" id="dob">
+    </div>
+    <div>
+        <label>Email </label><br>
+        <input type="email" id="email">
+    </div>
+    <div>
+        <label>Phone </label><br>
+        <input type="text" id="phone">
+    </div>
+    
+    <div>
+        <label>Hobbies</label>
+        <input type="checkbox" id="playing_cricket" value="playing cricket" />
+        <label >Playing Cricket</label>
+    
+        <input type="checkbox" id="watching_series" value="watching series" />
+        <label >Watching Series</label>
+    
+        <input type="checkbox" id="cooking" value="cooking" />
+        <label >Cooking</label>
+    </div>
+    <br/>
+    <div>
+        <button onclick="submitProfile()">Submit</button>
+    </div>
+
+    <p id="profile">
+
+    </p>
+
+
+    <script>
+
+        function submitProfile() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const dob = document.getElementById('dob').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const hobby1 = document.getElementById('playing_cricket').checked;
+            const hobby2 = document.getElementById('watching_series').checked;
+            const hobby3 = document.getElementById('cooking').checked;
+            
+
+            const profile = `<div>
+                    <h3> First Name    : ${firstName}  </h3> 
+                    <h3> Last Name     : ${lastName}  </h3> 
+                    <h3> Date of Birth : ${dob}  </h3> 
+                    <h3> Email         : ${email}  </h3> 
+                    <h3> Phone         : ${phone}  </h3>
+                    ${document.getElementById('playing_cricket').checked ? `<h3> Hobby : ${document.getElementById('playing_cricket').value}  </h3>`:"" }
+                    ${document.getElementById('watching_series').checked ? `<h3> Hobby : ${document.getElementById('watching_series').value}  </h3>` : "" }
+                    ${document.getElementById('cooking').checked ? `<h3> Hobby : ${document.getElementById('cooking').value}  </h3>` : "" }
+            
+                    </div>`
+
+            document.getElementById('profile').innerHTML = profile;
+        }
+    </script>
+</body>
+
+</html>
