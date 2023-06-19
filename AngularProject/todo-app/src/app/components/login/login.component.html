@@ -1,0 +1,24 @@
+
+<mat-card class="box">
+  <h2 class ='head'>Login Form</h2>
+ 
+    <mat-grid-list cols="1" rowHeight="100px" style="margin: 5rem 15rem">
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="email"/>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile
+        ><mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput [(ngModel)]="password"/> </mat-form-field
+      ></mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+ 
+    <h3 value="message">{{message}}</h3>
+</mat-card>
+

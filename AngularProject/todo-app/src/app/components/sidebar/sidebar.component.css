@@ -1,11 +1,7 @@
 .sidenav {
     height: 100%;
-   
     position: fixed;
-   
     background-color:blue;
-
-
     padding-top: 60px;
   }
   ul {
