@@ -18,7 +18,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card'; 
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import {MatCardModule} from '@angular/material/card';
     LoginComponent,
     SignupComponent,
     ProfileComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,7 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatGridListModule,
     FormsModule,
-    ReactiveFormsModule,MatCardModule
+    ReactiveFormsModule,MatCardModule,MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

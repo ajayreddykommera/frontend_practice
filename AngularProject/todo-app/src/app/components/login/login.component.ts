@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private aService: AuthService) { }
   email: string = '';
   password: string = '';
   message: string = '';
@@ -19,10 +20,15 @@ export class LoginComponent {
       this.email == JSON.parse(users).email &&
       this.password == JSON.parse(users).password
     ) {
+      console.log("enter login",this.aService.isLoggedIn);
+      this.aService.isLoggedIn = true;
       this.router.navigate(['/profile']);
+      console.log(" after login",this.aService.isLoggedIn);
+      
     } else {
-      console.log("came to else block")
-      this.message = 'Try again';
+      this.aService.isLoggedIn = false;
+     alert('InValid details!!!')
+
     }
   }
 }
