@@ -2,7 +2,7 @@
     
     <span>To-Do App</span>
     <span class="example-spacer"></span>
-    <h2 *ngIf="isLoggedIn">{{fullName}}</h2>
+    <h2 style="margin-right: 10px;" *ngIf="isLoggedIn">{{fullName}}</h2>
     <img *ngIf="isLoggedIn" src="../../../assets/Ajay.png" class="avatar">
     
     <button *ngIf="isLoggedIn" (click)="handleLogout()" mat-raised-button color="warn">Logout</button>
