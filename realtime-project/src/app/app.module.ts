@@ -10,6 +10,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { ListComponent } from './components/list/list.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { ModelPopupComponent } from './components/model-popup/model-popup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { ProfileComponent } from './components/profile/profile.component';
     DashboardComponent,
     FormsComponent,
     ListComponent,
-    ProfileComponent
+    ProfileComponent,
+    SidenavComponent,
+    ModelPopupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
