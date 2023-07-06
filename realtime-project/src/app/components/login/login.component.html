@@ -10,7 +10,7 @@
                     Login
                   </p>
   
-                  <form>
+                  <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
                     
   
                     <!-- Email input -->
@@ -20,6 +20,7 @@
                         id="email"
                         class="form-control"
                         placeholder="Email"
+                        formControlName="email"
                       />
                     </div>
   
@@ -30,12 +31,13 @@
                         id="pwd"
                         class="form-control"
                         placeholder="Password"
+                        formControlName="pwd"
                       />
                     </div>
   
                     <!-- Submit button -->
                     <div class="d-grid gap-2">
-                      <button class="btn btn-primary mb-4" type="button">Login</button>
+                      <button class="btn btn-primary mb-4" type="submit">Login</button>
                   
                     </div>
                     <div class="text-center">
@@ -50,4 +52,3 @@
       </div>
     </div>
   </section>
-  

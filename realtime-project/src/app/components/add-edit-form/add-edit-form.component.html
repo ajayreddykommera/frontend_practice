@@ -1,0 +1,81 @@
+
+
+<div mat-dialog-title>
+    <h1>Submission Form Form</h1>
+</div>
+<form [formGroup]="submissionForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Vendor Name</mat-label>
+                <input matInput  formControlName="vendor">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email"  formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput  formControlName="mobile">
+            </mat-form-field>
+            
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Client Name</mat-label>
+                <input matInput type="text"  formControlName="client">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Implementation Patner</mat-label>
+                <input matInput  formControlName="implementation">
+            </mat-form-field>
+            
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Lead Name</mat-label>
+                <input matInput type="text"  formControlName="lead">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Student Name</mat-label>
+                <input matInput  formControlName="student">
+            </mat-form-field>
+            
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Recruiter Name</mat-label>
+                <input matInput type="text"  formControlName="recruiter">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Pay Rate</mat-label>
+                <input matInput  formControlName="payrate">
+            </mat-form-field>
+            
+        </div>
+
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="submitted">
+                <mat-label><b>Submitted</b></mat-label>
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="No">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>

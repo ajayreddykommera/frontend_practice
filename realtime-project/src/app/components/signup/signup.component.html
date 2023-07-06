@@ -1,70 +1,74 @@
 <section class="vh-100" style="background-color: #e9edf2">
-  <div class="container w-50 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-xs-12">
-        <div class="card text-black" style="border-radius: 25px">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-10 col-xl-10 order-2 order-lg-1">
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                  Sign up
-                </p>
-
-                <form>
-                  <!-- 2 column grid layout with text inputs for the first and last names -->
-
-                  <div class="form-outline mb-4">
-                    <input
-                      type="text"
-                      id="fn"
-                      class="form-control"
-                      placeholder="First Name"
-                    />
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input
-                      type="text"
-                      id="ln"
-                      class="form-control"
-                      placeholder="Last Name"
-                    />
-                  </div>
-
-                  <!-- Email input -->
-                  <div class="form-outline mb-4">
-                    <input
-                      type="email"
-                      id="email"
-                      class="form-control"
-                      placeholder="Email"
-                    />
-                  </div>
-
-                  <!-- Password input -->
-                  <div class="form-outline mb-4">
-                    <input
-                      type="password"
-                      id="pwd"
-                      class="form-control"
-                      placeholder="Password"
-                    />
-                  </div>
-
-                  <!-- Submit button -->
-                  <div class="d-grid gap-2">
-                    <button class="btn btn-primary mb-4" type="button" >Sign Up</button>
-                
-                  </div>
-                  <div class="text-center">
-                    <p>Already a member? <a href="/login">Login</a></p>
-                  </div>
-                </form>
+    <div class="container w-50 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-xs-12">
+          <div class="card text-black" style="border-radius: 25px">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-10 col-xl-10 order-2 order-lg-1">
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                    Sign up
+                  </p>
+  
+                  <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+  
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="fn"
+                        class="form-control"
+                        placeholder="First Name"
+                        formControlName="firstName"
+                      />
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <input
+                        type="text"
+                        id="ln"
+                        class="form-control"
+                        placeholder="Last Name"
+                        formControlName="lastName"
+                      />
+                    </div>
+  
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="Email"
+                        formControlName="email"
+                      />
+                    </div>
+  
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                      <input
+                        type="password"
+                        id="pwd"
+                        class="form-control"
+                        placeholder="Password"
+                        formControlName="pwd"
+                      />
+                    </div>
+  
+                    <!-- Submit button -->
+                    <div class="d-grid gap-2">
+                      <button class="btn btn-primary mb-4" type="submit" >Sign Up</button>
+                  
+                    </div>
+                    <div class="text-center">
+                      <p>Already a member? <a href="/login">Login</a></p>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
