@@ -17,11 +17,17 @@ export class SubmissionsService {
     return this._http.put(`http://localhost:3000/submission/${id}`, data);
   }
 
-  getSubmissionList(): Observable<any> {
-    return this._http.get('http://localhost:3000/submission');
+  getSubmissionList(lead:String,technology:String): Observable<any> {
+    return this._http.get(`http://localhost:3000/submission?lead=${lead}&technology=${technology}`);
   }
 
   deleteSubmission(id: number): Observable<any> {
     return this._http.delete(`http://localhost:3000/submission/${id}`);
+  }
+  getLeadsList(): Observable<any> {
+    return this._http.get('http://localhost:3000/leads');
+  }
+  getTechnologyList(): Observable<any> {
+    return this._http.get('http://localhost:3000/technologies');
   }
 }

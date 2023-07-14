@@ -21,6 +21,7 @@ export class AddEditFormComponent implements OnInit {
   ) {
     this.submissionForm = this._fb.group({
       date: '',
+      technology:"",
       vendor: '',
       email: '',
       mobile: '',
@@ -33,7 +34,12 @@ export class AddEditFormComponent implements OnInit {
       submitted: '',
     });
   }
-
+  get technology() {
+    return this.submissionForm.get("technology");
+  }
+  get lead() {
+    return this.submissionForm.get("lead");
+  }
   ngOnInit(): void {
     this.submissionForm.patchValue(this.data);
   }

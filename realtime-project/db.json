@@ -25,6 +25,7 @@
   "submission": [
     {
       "date": "2023-07-06T05:00:00.000Z",
+      "technology": "java",
       "vendor": "payton",
       "email": "paytonscott@gmail.com",
       "mobile": "1234567791",
@@ -33,9 +34,26 @@
       "lead": "vinay",
       "student": "tejaswini",
       "recruiter": "sai manda",
-      "payrate": "75",
+      "payrate": "79",
       "submitted": "yes",
       "id": 1
+    },
+    {
+      "date": "2023-07-02T05:00:00.000Z",
+      "technology": "salesforce",
+      "vendor": "test",
+      "email": "test@test.com",
+      "mobile": "123456789",
+      "client": "chase",
+      "implementation": "nytho",
+      "lead": "praveen",
+      "student": "ajay",
+      "recruiter": "xyz",
+      "payrate": "87",
+      "submitted": "No",
+      "id": 2
     }
-  ]
+  ],
+  "leads": ["vinay", "praveen", "tejan"],
+  "technologies": ["java", "salesforce", "devops", "de"]
 }

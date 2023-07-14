@@ -31,8 +31,8 @@ export class LoginComponent {
       console.log(this.userForm.value)
       this._authService.getUserById(this.userForm.value.email,this.userForm.value.pwd).subscribe({
         next: (val: any) => {
-          this._aauthservice.isLoggedIn.next(true);
-          console.log(this._aauthservice.isLoggedIn.value,val)
+          this._aauthservice.setItem('isLogged', true);
+          console.log(this._aauthservice.getItem,val)
           this.router.navigate(['/submissions']);
           val.length ? this._coreService.openSnackBar('Login Successful !'): this._coreService.openSnackBar('Login UnSuccessful !');
         },

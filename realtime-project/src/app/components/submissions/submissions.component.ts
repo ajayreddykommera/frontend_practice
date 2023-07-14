@@ -12,9 +12,15 @@ import { CoreService } from 'src/app/services/core.service';
   styleUrls: ['./submissions.component.scss'],
 })
 export class SubmissionsComponent {
+  selectedLead!: String  ;
+  selectedTechnology!: String  ;
+
+  leads:String[] | undefined;
+  technologies:String[] | undefined;
   displayedColumns: string[] = [
     'id',
     'date',
+    'technology',
     'vendor',
     'email',
     'mobile',
@@ -25,21 +31,25 @@ export class SubmissionsComponent {
     'recruiter',
     'payrate',
     'submitted',
-    "action"
+    'action',
   ];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
+  @ViewChild(MatSort) sort1!: MatSort;
   constructor(
     private _dialog: MatDialog,
     private _submissionService: SubmissionsService,
     private _coreService: CoreService
   ) {}
   ngOnInit(): void {
+    
+    this.getLeadsList();
+    this.getTechnologiesList();
+  }
+  getFilterList(){
     this.getSubList();
   }
-
   openAddEditSubForm() {
     const dialogRef = this._dialog.open(AddEditFormComponent);
     dialogRef.afterClosed().subscribe({
@@ -50,20 +60,49 @@ export class SubmissionsComponent {
       },
     });
   }
-
-  getSubList() {
-
-    this._submissionService.getSubmissionList().subscribe({
+  getLeadsList(){
+    this._submissionService.getLeadsList().subscribe({
       next: (res) => {
+        this.leads=res
+        console.log(this.leads)
+      },
+      error: console.log,
+    })
+  }
+  getTechnologiesList(){
+    this._submissionService.getTechnologyList().subscribe({
+      next: (res) => {
+        this.technologies=res
+        console.log(this.technologies)
+      },
+      error: console.log,
+    })
+  }
+  getSubList() {
+    console.log(this.selectedLead,this.selectedTechnology)
+    this._submissionService.getSubmissionList(this.selectedLead,this.selectedTechnology).subscribe({
+      next: (res) => {
+        console.log(res)
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
+        this.dataSource.sort = this.sort1;
         this.dataSource.paginator = this.paginator;
       },
       error: console.log,
     });
   }
-  
-  applyFilter(event: Event) {
+
+  applyFilterLead(event: Event) {
+    console.log('filter----', event);
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+  applyFilterTechnology(event: Event) {
+    console.log('filter----', event);
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -92,4 +131,5 @@ export class SubmissionsComponent {
         }
       },
     });
-}}
+  }
+}

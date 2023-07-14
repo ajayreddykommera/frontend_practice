@@ -6,19 +6,20 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService1 {
-  isLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
 
   constructor() {}
 
-  //   login(user: User) {
-  //     if (user.userName !== '' && user.password !== '' ) {
-  //       this.loggedIn.next(true);
-  //       this.router.navigate(['/']);
-  //     }
-  //   }
+  setItem(key: string, value: any): void {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
 
-  //   logout() {
-  //     this.loggedIn.next(false);
-  //     this.router.navigate(['/login']);
-  //   }
+  getItem(key: string): any {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : null;
+  }
+
+  removeItem(key: string): void {
+    localStorage.removeItem(key);
+  }
 }

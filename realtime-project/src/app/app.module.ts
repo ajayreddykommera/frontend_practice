@@ -24,22 +24,19 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+
 import { SubmissionsComponent } from './components/submissions/submissions.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { AddEditFormComponent } from './components/add-edit-form/add-edit-form.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { LoginSignupLayoutComponent } from './layouts/login-signup-layout/login-signup-layout.component';
-
-
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    NavbarComponent,
-    SidenavComponent,
+
     SubmissionsComponent,
     AddEditFormComponent,
     HomeLayoutComponent,
@@ -67,7 +64,7 @@ import { LoginSignupLayoutComponent } from './layouts/login-signup-layout/login-
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
-    MatSidenavModule
+    MatSidenavModule,MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
